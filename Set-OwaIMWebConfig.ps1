@@ -29,6 +29,7 @@ Tested on Exchange versions 2013 and 2016.
 
 Version Notes
 V1.00 - 5/22/2016 - Initial Version
+V1.1  - 10/4/2017 - Updated AdminDisplayVersion filter to "Version 15.0.*" to only gather Exchange 2013 servers
 #>
 
 #*************************************************************************************
@@ -49,7 +50,7 @@ Param
 #**************************     Variables     ****************************************
 #*************************************************************************************
 
-$MailboxServers = @(Get-ExchangeServer | Where-Object {$_.IsMailboxServer -eq $true -and $_.AdminDisplayVersion -like "Version 15.*"})
+$MailboxServers = @(Get-ExchangeServer | Where-Object {$_.IsMailboxServer -eq $true -and $_.AdminDisplayVersion -like "Version 15.0.*"})
 
 #*************************************************************************************
 #*************************     Module Check     **************************************
